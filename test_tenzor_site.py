@@ -7,13 +7,13 @@ def sbis():
     yield sbis
     sbis.close_browser()
 
-
+# Тест на проверку кнопки Контакты
 def test_contact_button(sbis):
     sbis.open()
     sbis.click_button("a[href='/contacts']")
     assert "Контакты" in sbis.browser.title
 
-
+# Tест на проверку блока "Сила в людях"
 def test_power_block(sbis):
     sbis.open()
     sbis.click_button("a[href='/contacts']")
@@ -22,7 +22,7 @@ def test_power_block(sbis):
     block = sbis.find_element_by_css("div.tensor_ru-Index__block4-content.tensor_ru-Index__card")
     assert "Сила в людях" in block.text
 
-
+# Тест на проверку соответствия размера фотографий
 def test_works_photos_size(sbis):
     sbis.open()
     sbis.click_button("a[href='/contacts']")
