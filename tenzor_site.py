@@ -7,29 +7,36 @@ class SbisWebsite:
         self.url = url
         self.browser = Chrome()
 
+    # Открыть сайт
     def open(self):
         self.browser.get(self.url)
         time.sleep(4)
 
+    # Назать кнопку
     def click_button(self, selector):
         button = self.browser.find_element(By.CSS_SELECTOR, selector)
         button.click()
         time.sleep(4)
 
+    # Активируем окно
     def switch_to_window(self, window_index):
         window_handles = self.browser.window_handles
         self.browser.switch_to.window(window_handles[window_index])
         time.sleep(2)
 
+    # Поиск элемента по CSS селектору
     def find_element_by_css(self, css_selector):
         return self.browser.find_element(By.CSS_SELECTOR, css_selector)
 
+    # Поиск элементов по CSS селектору
     def get_elements_by_css(self, css_selector):
         return self.browser.find_elements(By.CSS_SELECTOR, css_selector)
 
+    # Получаем размеры изображений
     def get_element_size(self, element):
         return [element.size['width'], element.size['height']]
 
+    # Закрываем браузер
     def close_browser(self):
         self.browser.quit()
 
