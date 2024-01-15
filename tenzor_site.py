@@ -12,7 +12,7 @@ class SbisWebsite:
         self.browser.get(self.url)
         time.sleep(4)
 
-    # Назать кнопку
+    # Нажать кнопку
     def click_button(self, selector):
         button = self.browser.find_element(By.CSS_SELECTOR, selector)
         button.click()
